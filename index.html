@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <div class = "container">
+
+    <div class = "block1">
+         <h1>Learn to code by <br>
+         wathing others</h1>
+         <p>See how experienced developers solve problems in real-time.
+         Watching scripted tutorials is great, but understanding how <br>
+         developers think is invaluable.</p>
+        </div>
+
+    <div class = "block2">
+      <button class="btn1">
+        <span>Try it free 7 days then $20/mo. thereafter</span>
+      </button>
+
+<form id="formId" name="myForm" onsubmit="return validate()" action="">
+<div class = "form">
+  <input placeholder="Name" name="firstName" type="text">
+  <input placeholder="Last Name" name="lastName" type="text">
+  <input placeholder="Email Adress" id="usEmail" name="usEmail" type="email">
+  <input placeholder="Password" name="usPassword" type="password">
+
+  <button name="send" class="btn2">
+    <span>CLAIM YOUR FREE TRIAL</span>
+  </button>
+</div>
+</form>
+    </div>
+
+  </div>
+  
+<script>
+
+ function validate() {
+
+
+   let a = document.forms["myForm"]["firstName"].value;
+   if (a == "") {
+     alert("Укажите имя!"); 
+     return false;
+   }
+
+ let b = document.forms["myForm"]["lastName"].value;
+   if (b == "") {
+     alert("Укажите фамилию!"); 
+     return false;
+   }
+
+   let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   let address = document.forms["myForm"]["usEmail"].value;
+   if(reg.test(address) == false) {
+      alert('Введите корректный e-mail');
+      return false;
+   }
+
+   let c = document.forms["myForm"]["usPassword"].value;
+   if (c == "") {
+     alert("Укажите пароль!"); 
+     return false;
+ }
+}
+
+</script>
+
+</body>
+</html>
